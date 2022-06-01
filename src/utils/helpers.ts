@@ -180,8 +180,8 @@ export const verifyWebhookSignature = (
   const currentTimestamp = Math.floor(new Date().getTime() / 1000);
   if (currentTimestamp - timestamp > timestampToleranceSeconds) {
     if (isDebugEnabled()) {
-      console.info(
-        `Invalid signature. Blockfrost signature timestamp is out of range!`,
+      console.debug(
+        `Invalid signature. Signature timestamp ${timestamp} is out of range!`,
       );
     }
     return false;
